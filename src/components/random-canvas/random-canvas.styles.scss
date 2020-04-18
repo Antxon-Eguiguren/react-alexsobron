@@ -1,0 +1,16 @@
+.title {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    font-size: 2.5em;
+    color: blueviolet;
+    font-family: 'Fira Code', monospace;
+}
+
+img {
+    position: absolute;
+    top: 500px;
+    left: 400px;
+    transform: translate(-50%, -50%) scale(0.4);
+}

@@ -12,7 +12,9 @@ const placeImage = (x, y, imagesUrl) => {
 
 const RandomCanvas = (mediaFromWP) => {
     const imagesUrl = [];
-    mediaFromWP.media.map(item => imagesUrl.push(item.guid.rendered));
+    for (let i = 0; i < mediaFromWP.mediaFromWP.length; i++) {
+        mediaFromWP.mediaFromWP[i].map(item => imagesUrl.push(item.guid.rendered));
+    }
 
     document.addEventListener('click', (event) => {
         event.preventDefault();

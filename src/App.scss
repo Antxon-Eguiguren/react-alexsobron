@@ -1,0 +1,37 @@
+// COLOR VARIABLES
+$color-background-primary: white;
+
+// FONT TYPES
+$font-primary: 'Arial', sans-serif;
+
+// FONT COLOR
+$font-color-primary: black;
+
+// BREAKPOINTS
+// $bp-largest: 75em;            // 1200px/16px = 75em;
+// $bp-large: 62.5em;            // 1000px/16px = 62.5em;
+// $bp-medium: 50em;             // 800px/16px = 50em;
+// $bp-small: 37.5em;            // 600px/16px = 37.5em;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;   // 10px/16px = 62.5% --> 1rem = 10px
+}
+
+body {
+    font-family: $font-primary;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $font-color-primary;
+    background-color: $color-background-primary;
+}

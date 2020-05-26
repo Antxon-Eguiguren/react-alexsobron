@@ -1,44 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 
-import RandomCanvas from './components/random-canvas/random-canvas.component';
+import CanvasPage from './pages/canvas/canvaspage.component';
 
-import './App.css';
+import './App.scss';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      mediaFromWP: []
+const App = () => {
+  const [mediaFromWP, setMediaFromWP] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const dataArr = [];
+      const hits = await axios('http://localhost:8888/alexsobron/back/wp-json/wp/v2/media?per_page=100');
+      for (let i = 1; i <= hits.headers['x-wp-totalpages']; i++) {
+        const response = await axios(`http://localhost:8888/alexsobron/back/wp-json/wp/v2/media?per_page=100&page=${i}`);
+        response.data.map(item => dataArr.push(item));
+      }
+      setMediaFromWP(dataArr);
     }
-  }
 
-  async componentDidMount() {
-    const requests = [];
-    const response = await fetch('http://localhost:8888/alexsobron/back/wp-json/wp/v2/media?per_page=100');
-    for (let i = 1; i <= response.headers.get('X-WP-TotalPages'); i++) {
-      requests.push(this.fetchData(`http://localhost:8888/alexsobron/back/wp-json/wp/v2/media?per_page=100&page=${i}`))
-    }
-    Promise.all(requests)
-      .then(data => {
-        this.setState({ mediaFromWP: data });
-      })
-  }
+    fetchData();
+  }, []);
 
-  fetchData = (url) => {
-    return fetch(url)
-      .then(response => response.json());
-  }
-
-  render() {
-    return (
-      <div className="App" >
-        <Switch>
-          <Route exact path='/canvas' render={() => (<RandomCanvas mediaFromWP={this.state.mediaFromWP} />)} />
-        </Switch>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path='/canvas' render={() => (<CanvasPage mediaFromWP={mediaFromWP} />)} />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;

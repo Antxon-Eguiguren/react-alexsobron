@@ -1,0 +1,40 @@
+.btn {
+    font-size: inherit;
+    font-family: inherit;
+    text-transform: uppercase;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5rem;
+    padding: .6rem 3rem;
+    position: relative;
+    overflow: hidden;
+
+    & > * {
+        display: inline-block;
+        transition: all .3s;
+    }
+
+    &__invisible {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        padding: .6rem 3rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover &__visible {
+        transform: translateY(-200%);
+    }
+
+    &:hover &__invisible {
+        transform: translateY(-100%);
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './canvaspage.styles.scss';
 
-const CanvasPage = ({ mediaFromWP }) => {
+const CanvasPageComponent = ({ mediaFromWP }) => {
     const imagesUrl = [];
     mediaFromWP.map(item => imagesUrl.push(item.guid.rendered));
 
@@ -24,4 +24,4 @@ const CanvasPage = ({ mediaFromWP }) => {
     );
 };
 
-export default CanvasPage;
+export default CanvasPageComponent;

@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
-import CanvasPage from './pages/canvas/canvaspage.component';
+import HeaderComponent from './components/header/header.component';
+import MenuComponent from './components/menu/menu.component';
+
+import HomePageComponent from './pages/home/homepage.component';
+import ProjectsPageComponent from './pages/projects/projectspage.component';
+import JewelleryPageComponent from './pages/jewellery/jewellerypage.component';
+import PhotoPageComponent from './pages/photo/photopage.component';
+import StylingPageComponent from './pages/styling/stylingpage.component';
+import DjPageComponent from './pages/dj/djpage.component';
+import AboutPageComponent from './pages/about/aboutpage.component';
+import ShopPageComponent from './pages/shop/shoppage.component';
+import CanvasPageComponent from './pages/canvas/canvaspage.component';
 
 import './App.scss';
+
 
 const App = () => {
   const [mediaFromWP, setMediaFromWP] = useState([]);
@@ -23,10 +36,25 @@ const App = () => {
     fetchData();
   }, []);
 
+  const headerHidden = useSelector(state => state.headerHidden);
+
   return (
-    <div className="App">
+    <div className='App'>
+      <HeaderComponent />
+      <MenuComponent headerHidden={headerHidden} />
       <Switch>
-        <Route exact path='/canvas' render={() => (<CanvasPage mediaFromWP={mediaFromWP} />)} />
+        <Route exact path='/'> <HomePageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/projects'> <ProjectsPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/jewellery'> <JewelleryPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/photo'> <PhotoPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/styling'> <StylingPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/dj'> <DjPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/about'> <AboutPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/shop'> <ShopPageComponent headerHidden={headerHidden} /></Route>
+        {/* <Route path='/canvas'><CanvasPageComponent mediaFromWP={mediaFromWP} /></Route> */}
+        <Route path='/*'>
+          <Redirect to='/' />
+        </Route>
       </Switch>
     </div>
   );

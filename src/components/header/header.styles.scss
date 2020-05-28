@@ -1,0 +1,32 @@
+@import '../../App.scss';
+
+.header--visible {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: $border-primary;
+    height: 9rem;
+
+    &__logo {
+        transition: transform .5s;
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-.5rem);
+        }
+    }
+
+    &__ig {
+        text-decoration: none;
+        color: $font-color-primary;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+.header--invisible {
+    display: none;
+}

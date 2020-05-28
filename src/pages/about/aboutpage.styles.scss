@@ -1,0 +1,55 @@
+@import '../../App.scss';
+
+.about {
+    display: flex;
+    margin: 0rem 10rem;
+    margin-bottom: 12rem;
+
+    &__image,
+    &__text {
+        width: 50%;
+    }
+
+    &__image {
+        height: 100vh;
+        background-image: url(../../assets/about.jpg);
+        background-size: contain;
+        background-position: cover;
+        background-repeat: no-repeat;
+        position: sticky;
+        top: 15%;
+        z-index: -1;
+        margin: 0 auto;
+    }
+
+    &__text {
+        margin-top: 1rem;
+        font-size: 2rem;
+        line-height: 2;
+        text-align: justify;
+
+        & h2 {
+            font-size: 7.5rem;
+        }
+
+    }
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(2, calc(100%/2));
+    justify-items: center;
+    padding: 3rem;
+    margin: 3rem 0rem;
+    border: $border-primary;
+
+    & a {
+        text-decoration: none;
+        color: $font-color-primary;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}

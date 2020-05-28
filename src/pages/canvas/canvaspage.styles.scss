@@ -1,11 +1,11 @@
-.title {
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 100%;
-}
+.canvas {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-img {
-    position: absolute;
-    transform: translate(-50%, -50%) scale(0.4);
+    &__image {
+        position: absolute;
+        transform: translate(-50%, -50%) scale(0.4);
+    }
 }

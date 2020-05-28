@@ -8,6 +8,7 @@ const CanvasPageComponent = ({ mediaFromWP }) => {
 
     const placeImage = (x, y, imagesUrl) => {
         const image = document.createElement('img');
+        image.classList.add('canvas__image');
         image.setAttribute('src', imagesUrl[Math.round(Math.random() * imagesUrl.length)]);
         image.style.left = x + 'px';
         image.style.top = y + 'px';
@@ -20,7 +21,9 @@ const CanvasPageComponent = ({ mediaFromWP }) => {
     });
 
     return (
-        <div className='title'>Click to find out my Artwork</div>
+        <div className='canvas'>
+            <p className='canvas__text'>Click to find out my Artwork</p>
+        </div>
     );
 };
 

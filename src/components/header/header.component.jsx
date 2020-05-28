@@ -14,11 +14,17 @@ const HeaderComponent = () => {
 
     return (
         <div className={`${headerHidden ? 'header--invisible' : 'header--visible'}`}>
-            <ButtonComponent text='Menu Principal' action={() => dispatch(toggleHeaderHidden())} />
-            <div className='header--visible__logo'>
-                <Link to='/'><img src={Logo} alt="Logo" /></Link>
+            <div>
+                <ButtonComponent text='Menu' action={() => dispatch(toggleHeaderHidden())} />
             </div>
-            <a className='header--visible__ig' href='https://www.instagram.com/axlsobron/' target='_blank' rel='noopener noreferrer'>Instagram</a>
+            <div>
+                <Link to='/'>
+                    <img className='header--visible__logo' src={Logo} alt="Logo" />
+                </Link>
+            </div>
+            <div>
+                <a className='header--visible__ig' href='https://www.instagram.com/axlsobron/' target='_blank' rel='noopener noreferrer'>Instagram</a>
+            </div>
         </div>
     )
 };

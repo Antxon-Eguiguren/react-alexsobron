@@ -51,7 +51,7 @@ const App = () => {
         <Route path='/dj'> <DjPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/about'> <AboutPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/shop'> <ShopPageComponent headerHidden={headerHidden} /></Route>
-        {/* <Route path='/canvas'><CanvasPageComponent mediaFromWP={mediaFromWP} /></Route> */}
+        <Route path='/canvas'><CanvasPageComponent mediaFromWP={mediaFromWP} /></Route>
         <Route path='/*'>
           <Redirect to='/' />
         </Route>

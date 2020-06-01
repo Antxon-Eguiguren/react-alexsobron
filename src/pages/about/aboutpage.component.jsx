@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import hoverEffect from 'hover-effect';
 
 import './aboutpage.styles.scss';
 
 const AboutPageComponent = ({ headerHidden }) => {
+    useEffect(() => {
+        new hoverEffect({
+            parent: document.querySelector('.about__image'),
+            intensity: 0.1,
+            angle2: Math.PI / 2,
+            imagesRatio: 1,
+            image1: 'hover-effect/images/about1.jpg',
+            image2: 'hover-effect/images/about1.jpg',
+            displacementImage: 'hover-effect/distortion/6.jpg'
+        });
+    }, []);
+
     return (
         headerHidden ? null :
             <div>

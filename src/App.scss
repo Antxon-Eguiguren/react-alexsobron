@@ -2,7 +2,20 @@
 $color-background-primary: white;
 
 // FONT TYPES
+@font-face {
+    font-family: 'MonumentExtended-Regular';
+    src: url('assets/font/MonumentExtended-Regular.eot');
+    src: url('assets/font/MonumentExtended-Regular.eot?#iefix') format('embedded-opentype'),
+         url('assets/font/MonumentExtended-Regular.svg#MonumentExtended-Regular') format('svg'),
+         url('assets/font/MonumentExtended-Regular.ttf') format('truetype'),
+         url('assets/font/MonumentExtended-Regular.woff') format('woff'),
+         url('assets/font/MonumentExtended-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $font-primary: 'Arial', sans-serif;
+$font-heading: 'MonumentExtended-Regular';
 
 // FONT COLOR
 $font-color-primary: black;

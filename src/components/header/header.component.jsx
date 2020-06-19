@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import ButtonComponent from '../button/button.component';
 
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/images/logo.png';
 import './header.styles.scss';
 
 const HeaderComponent = () => {

@@ -18,7 +18,6 @@ import CanvasPageComponent from './pages/canvas/canvaspage.component';
 
 import './App.scss';
 
-
 const App = () => {
   const [mediaFromWP, setMediaFromWP] = useState([]);
 
@@ -46,7 +45,7 @@ const App = () => {
         <Route exact path='/'> <HomePageComponent headerHidden={headerHidden} /></Route>
         <Route path='/projects'> <ProjectsPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/jewellery'> <JewelleryPageComponent headerHidden={headerHidden} /></Route>
-        <Route path='/photo'> <PhotoPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/photo'> <PhotoPageComponent headerHidden={headerHidden} mediaFromWP={mediaFromWP} /></Route>
         <Route path='/styling'> <StylingPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/dj'> <DjPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/about'> <AboutPageComponent headerHidden={headerHidden} /></Route>

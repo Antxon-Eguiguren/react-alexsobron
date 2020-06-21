@@ -1,0 +1,29 @@
+.carousel {
+    width: 50%;
+    margin: 5rem auto;
+
+    &__arrow {
+        background-color: transparent;
+        border: none;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            color: lime;
+        }
+    }
+}
+
+.slider,
+.slider-slide {
+    outline: none;
+    cursor: auto;
+}
+
+.slider-control-centerleft {
+    left: -100px !important;
+}
+
+.slider-control-centerright {
+    right: -100px !important;
+}

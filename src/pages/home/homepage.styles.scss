@@ -1,6 +1,40 @@
-.home {
+@import '../../App.scss';
 
-    &__text-distorted {
-        
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__letters {
+        margin-top: 6rem;
+    }
+
+    &__image {
+        z-index: -1;
+        width: 100vw;
+        height: 70vh;
+        background-image: url('../../assets/images/home.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__alex {
+        font-family: $font-heading;
+        color: white;
+        -webkit-text-stroke-width: .1rem;
+        -webkit-text-stroke-color: black;
+        letter-spacing: .3rem;
+        font-size: 7rem;
+        line-height: .2rem;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    &__last:hover {
+        color: lime;
     }
 }

@@ -11,6 +11,7 @@ import ProjectsPageComponent from './pages/projects/projectspage.component';
 import JewelleryPageComponent from './pages/jewellery/jewellerypage.component';
 import PhotoPageComponent from './pages/photo/photopage.component';
 import StylingPageComponent from './pages/styling/stylingpage.component';
+import StylingDetailsPageComponent from './pages/styling-details/styling-details.component';
 import DjPageComponent from './pages/dj/djpage.component';
 import AboutPageComponent from './pages/about/aboutpage.component';
 import ShopPageComponent from './pages/shop/shoppage.component';
@@ -46,7 +47,9 @@ const App = () => {
         <Route path='/projects'> <ProjectsPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/jewellery'> <JewelleryPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/photo'> <PhotoPageComponent headerHidden={headerHidden} mediaFromWP={mediaFromWP} /></Route>
-        <Route path='/styling'> <StylingPageComponent headerHidden={headerHidden} /></Route>
+        <Route exact path='/styling'> <StylingPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/styling/volver'> <StylingDetailsPageComponent headerHidden={headerHidden} /></Route>
+        <Route path='/styling/villa-les-roses'> <StylingDetailsPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/dj'> <DjPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/about'> <AboutPageComponent headerHidden={headerHidden} /></Route>
         <Route path='/shop'> <ShopPageComponent headerHidden={headerHidden} /></Route>

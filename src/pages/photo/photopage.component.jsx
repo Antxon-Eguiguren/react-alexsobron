@@ -11,9 +11,7 @@ const PhotoPageComponent = ({ headerHidden, mediaFromWP }) => {
             <div className='carousel'>
                 <Carousel
                     transitionMode='fade'
-                    // slideWidth='500px'
-                    // framePadding='5rem'
-                    heightMode='current'
+                    slidesToShow={2}
                     dragging={true}
                     renderBottomCenterControls={null}
                     renderCenterLeftControls={({ previousSlide }) => (
@@ -28,9 +26,10 @@ const PhotoPageComponent = ({ headerHidden, mediaFromWP }) => {
                     )}
                 >
                     {
-                        mediaFromWP.map(item => (
-                            <img src={item.source_url} alt={item.title.rendered} key={item.id}></img>
-                        ))
+                        mediaFromWP.map(item => {
+                            return item.alt_text === 'polaroid' ?
+                                <img src={item.source_url} alt={item.title.rendered} key={item.id}></img> : null
+                        })
                     }
                 </Carousel>
             </div >
